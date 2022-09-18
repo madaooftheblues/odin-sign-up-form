@@ -76,9 +76,10 @@
       const confirmPass = document.getElementById("confirm_password");
       const submitButton = document.getElementById("submit");
       const passDoNotMatch = document.createElement("p");
-      passDoNotMatch.innerText = "*Passwords do not match";
+      passDoNotMatch.innerText = "* Passwords do not match";
       passDoNotMatch.style.color = "red";
       passDoNotMatch.style.fontSize = "0.6rem";
+      passDoNotMatch.style.margin = "2px";
 
       submitButton.addEventListener("click", () => {
         if (pass.value != confirmPass.value) {
