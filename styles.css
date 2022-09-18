@@ -28,7 +28,6 @@ cite,
 code,
 del,
 dfn,
-em,
 img,
 ins,
 kbd,
@@ -131,6 +130,7 @@ table {
 :root {
   --font_size: 1.3rem;
   --accent: #596d48;
+  font-family: "Arial Narrow", Arial, sans-serif;
 }
 
 @font-face {
@@ -182,7 +182,8 @@ input:focus {
 
 input {
   width: 200px;
-  border: 2px solid #e5e7eb;
+  border: 2px solid #edeef0;
+  border-radius: 2px;
 }
 
 a.login {
@@ -241,7 +242,7 @@ a.login {
 .description {
   width: 80%;
   font-size: var(--font_size);
-  font-weight: 800;
+  font-weight: 600;
 }
 
 .input {
@@ -258,6 +259,7 @@ a.login {
 
 .error {
   border: 1px solid red;
+  padding: 2px 3px;
 }
 
 .btn-submit {
@@ -269,4 +271,8 @@ a.login {
   color: white;
   font-size: 1.1rem;
   font-weight: 800;
+}
+
+.btn-submit:focus {
+  border: 1px solid black;
 }

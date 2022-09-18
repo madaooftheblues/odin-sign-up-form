@@ -34,40 +34,59 @@
           <br />
           <p>You <em>know</em> you want to.</p>
         </div>
-        <form action="#" method="post">
+        <form method="post" id="form">
           <p>Let's do this!</p>
           <div class="input-container">
             <div class="input">
               <label for="first_name">FIRST NAME</label>
-              <input type="text" id="first_name" />
+              <input type="text" id="first_name" required />
             </div>
             <div class="input">
               <label for="last_name">LAST NAME</label>
-              <input type="text" id="last_name" />
+              <input type="text" id="last_name" required />
             </div>
             <div class="input">
               <label for="email">EMAIL</label>
-              <input type="email" id="email" />
+              <input type="email" id="email" required />
             </div>
             <div class="input">
               <label for="tel">PHONE NUMBER</label>
-              <input type="tel" id="tel" />
+              <input type="tel" id="tel" required />
             </div>
             <div class="input">
               <label for="password">PASSWORD</label>
-              <input .class="error" type="password" id="password" />
+              <input type="password" id="password" required />
             </div>
             <div class="input">
               <label for="confirm_password">CONFIRM PASSWORD</label>
-              <input .class="error" type="password" id="confirm_password" />
+              <input type="password" id="confirm_password" required />
             </div>
           </div>
         </form>
         <div>
-          <button class="btn-submit" type="submit">Create Account</button>
+          <button id="submit" class="btn-submit" type="submit" form="form">
+            Create Account
+          </button>
           <p>Already have an account? <a class="login" href="#">Log in</a></p>
         </div>
       </div>
     </div>
+    <script>
+      const pass = document.getElementById("password");
+      const confirmPass = document.getElementById("confirm_password");
+      const submitButton = document.getElementById("submit");
+      const passDoNotMatch = document.createElement("p");
+      passDoNotMatch.innerText = "*Passwords do not match";
+      passDoNotMatch.style.color = "red";
+      passDoNotMatch.style.fontSize = "0.6rem";
+
+      submitButton.addEventListener("click", () => {
+        if (pass.value != confirmPass.value) {
+          pass.classList.add("error");
+          confirmPass.classList.add("error");
+          pass.parentNode.insertBefore(passDoNotMatch, pass.nextSibling);
+        }
+      });
+    </script>
   </body>
 </html>
